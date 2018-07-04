@@ -54,5 +54,9 @@ paths:
                   "!foo:example.com"
                 ]
               }
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room membership

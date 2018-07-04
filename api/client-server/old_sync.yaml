@@ -101,6 +101,10 @@ paths:
                     - "$ref": "definitions/event-schemas/schema/core-event-schema/room_event.yaml"
         400:
           description: "Bad pagination ``from`` parameter."
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room participation
       deprecated: true
@@ -396,6 +400,10 @@ paths:
             required: ["end", "rooms", "presence"]
         404:
           description: There is no avatar URL for this user or this user does not exist.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room participation
       deprecated: true
@@ -438,6 +446,10 @@ paths:
               - "$ref": "definitions/event-schemas/schema/core-event-schema/event.yaml"
         404:
           description: The event was not found or you do not have permission to read this event.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room participation
       deprecated: true

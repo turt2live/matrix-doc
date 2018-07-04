@@ -121,6 +121,10 @@ paths:
           description: |-
             There is no presence state for this user. This user may not exist or
             isn't exposing presence information to you.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Presence
   "/presence/list/{userId}":
@@ -221,5 +225,9 @@ paths:
               title: PresenceEvent
               allOf:
                 - "$ref": "definitions/event-schemas/schema/core-event-schema/event.yaml"
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Presence

@@ -295,6 +295,10 @@ paths:
             allOf: [
               "$ref": "definitions/push_rule.yaml"
             ]
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Push notifications
     delete:
@@ -335,6 +339,10 @@ paths:
               }
           schema:
             type: object  # empty json object
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Push notifications
     put:
@@ -491,6 +499,10 @@ paths:
                 type: boolean
                 description: Whether the push rule is enabled or not.
             required: ["enabled"]
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
     put:
       summary: "Enable or disable a push rule."
       description: |-
@@ -544,6 +556,10 @@ paths:
               }
           schema:
             type: object
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Push notifications
   "/pushrules/{scope}/{kind}/{ruleId}/actions":
@@ -594,6 +610,10 @@ paths:
                 items:
                   type: string
             required: ["actions"]
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
     put:
       summary: "Set the actions for a push rule."
       description: |-
@@ -652,5 +672,9 @@ paths:
               }
           schema:
             type: object
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Push notifications

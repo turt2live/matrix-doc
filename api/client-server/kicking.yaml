@@ -81,5 +81,9 @@ paths:
                 "errcode": "M_FORBIDDEN",
                 "error": "You do not have a high enough power level to kick from this room."
               }
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room membership

@@ -59,6 +59,10 @@ paths:
               "errcode": "M_NOT_FOUND",
               "error": "Room not found"
             }
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
     put:
       summary: Sets the visibility of a room in the room directory
       description: |-
@@ -107,6 +111,10 @@ paths:
               "errcode": "M_NOT_FOUND",
               "error": "Room not found"
             }
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
   "/publicRooms":
     get:
       summary: Lists the public rooms on the server.
@@ -379,5 +387,9 @@ paths:
                 "prev_batch": "p1902",
                 "total_room_count_estimate": 115
               }
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room discovery

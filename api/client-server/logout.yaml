@@ -42,6 +42,11 @@ paths:
           schema:
             type: object
             properties: {}
+        # XXX: Should we really rate limit logging out?
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Session management
   "/logout/all":
@@ -65,5 +70,10 @@ paths:
           schema:
             type: object
             properties: {}
+        # XXX: Should we really rate limit logging out?
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Session management

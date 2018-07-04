@@ -70,6 +70,10 @@ paths:
                     address:
                       type: string
                       description: The third party identifier address.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - User data
     post:
@@ -129,6 +133,10 @@ paths:
                 "errcode": "M_THREEPID_AUTH_FAILED",
                 "error": "The third party credentials could not be verified by the identity server."
               }
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - User data
   "/account/3pid/email/requestToken":
@@ -145,3 +153,7 @@ paths:
       responses:
         200:
           description: An email was sent to the given address
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"

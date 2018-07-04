@@ -94,6 +94,10 @@ paths:
                   signed_curve25519: 20
             required:
               - one_time_key_counts
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
 
       tags:
         - End-to-end encryption
@@ -210,6 +214,10 @@ paths:
                         "device_display_name": "Alice's mobile phone"
                       }
                     }
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
          
       tags:
         - End-to-end encryption
@@ -289,6 +297,10 @@ paths:
                         signatures:
                           "@alice:example.com":
                             ed25519:JLAFKJWSCS: "FLWxXqGbwrb8SM3Y795eB6OA8bwBcoMZFXBqnTn58AYWZSqiD45tlBVcDa2L7RwdKXebW/VzDlnfVJ+9jok1Bw"
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - End-to-end encryption
   "/keys/changes":
@@ -353,5 +365,9 @@ paths:
                   the end-to-end encrypted rooms they previously shared
                   with the user.
                 example: ["@clara:example.com", "@doug:example.org"]
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - End-to-end encryption

@@ -74,5 +74,9 @@ paths:
             type: object
           examples:
             application/json: {}
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Reporting content

@@ -115,6 +115,10 @@ paths:
                           description: |-
                             Required if ``kind`` is ``http``. The URL to use to send
                             notifications to.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Push notifications
   "/pushers/set":

@@ -64,3 +64,7 @@ paths:
                  https://client.example.com/?q=p&loginToken=secrettoken
         401:
           description: The server was unable to validate the CAS ticket.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"

@@ -99,6 +99,10 @@ paths:
                 description: The user's display name if they have set one, otherwise not present.
         404:
           description: There is no display name for this user or this user does not exist.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - User data
   "/profile/{userId}/avatar_url":
@@ -173,6 +177,10 @@ paths:
                 description: The user's avatar URL if they have set one, otherwise not present.
         404:
           description: There is no avatar URL for this user or this user does not exist.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - User data
   "/profile/{userId}":
@@ -210,5 +218,9 @@ paths:
                 description: The user's display name if they have set one, otherwise not present.
         404:
           description: There is no profile information for this user or this user does not exist.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - User data

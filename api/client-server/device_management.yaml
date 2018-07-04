@@ -60,6 +60,10 @@ paths:
                   }
                 ]
               }
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Device management
   "/devices/{deviceId}":
@@ -93,6 +97,10 @@ paths:
               }
         404:
           description: The current user has no device with the given ID.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Device management
     put:
@@ -132,6 +140,10 @@ paths:
             type: object  # empty json object
         404:
           description: The current user has no device with the given ID.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Device management
     delete:
@@ -175,6 +187,11 @@ paths:
             The homeserver requires additional authentication information.
           schema:
             "$ref": "definitions/auth_response.yaml"
+        # XXX: Should we really rate limit deleting devices?
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Device management
   "/delete_devices":
@@ -222,5 +239,10 @@ paths:
             The homeserver requires additional authentication information.
           schema:
             "$ref": "definitions/auth_response.yaml"
+        # XXX: Should we really rate limit deleting of devices?
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Device management

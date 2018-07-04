@@ -92,6 +92,10 @@ paths:
                 type: string
                 description: |-
                   The ID of the filter that was created.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room participation
   "/user/{userId}/filter/{filterId}":
@@ -151,5 +155,9 @@ paths:
               - $ref: "definitions/sync_filter.yaml"
         404:
           description: "Unknown filter."
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room participation

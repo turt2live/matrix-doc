@@ -67,6 +67,10 @@ paths:
         200:
           description:
             The account_data was successfully added.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - User data
   "/user/{userId}/rooms/{roomId}/account_data/{type}":
@@ -116,5 +120,9 @@ paths:
         200:
           description:
             The account_data was successfully added.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - User data

@@ -111,4 +111,8 @@ paths:
                     - "$ref": "definitions/event-schemas/schema/core-event-schema/room_event.yaml"
         400:
           description: "Bad pagination ``from`` parameter."
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
         # No tags to exclude this from the swagger UI - use the normal version instead.

@@ -68,6 +68,10 @@ paths:
               - "$ref": "definitions/event-schemas/schema/core-event-schema/event.yaml"
         404:
           description: The event was not found or you do not have permission to read this event.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room participation
   "/rooms/{roomId}/state/{eventType}/{stateKey}":
@@ -114,6 +118,10 @@ paths:
           description: >
             You aren't a member of the room and weren't previously a
             member of the room.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room participation
   "/rooms/{roomId}/state/{eventType}":
@@ -156,6 +164,10 @@ paths:
           description: >
             You aren't a member of the room and weren't previously a
             member of the room.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room participation
   "/rooms/{roomId}/state":
@@ -273,6 +285,10 @@ paths:
           description: >
             You aren't a member of the room and weren't previously a
             member of the room.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room participation
   "/rooms/{roomId}/members":
@@ -344,6 +360,10 @@ paths:
           description: >
             You aren't a member of the room and weren't previously a
             member of the room.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room participation
   "/rooms/{roomId}/joined_members":
@@ -394,5 +414,9 @@ paths:
         403:
           description: >
             You aren't a member of the room.
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room participation

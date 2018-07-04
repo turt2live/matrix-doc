@@ -218,6 +218,10 @@ paths:
               invalid: for example, the user's ``power_level`` is set below
               that necessary to set the room name (``errcode`` set to
               ``M_INVALID_ROOM_STATE``).
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
 
       tags:
         - Room creation

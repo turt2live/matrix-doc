@@ -161,5 +161,9 @@ paths:
                     }
                   ]
                 }
+        429:
+          description: This request was rate-limited.
+          schema:
+            "$ref": "definitions/error.yaml"
       tags:
         - Room participation
